@@ -1,0 +1,96 @@
+/* Global Styles */
+label {
+  font-weight: 600;
+  color: #020202;
+  /* font-size: 14px; */
+  margin-bottom: 10px;
+}
+
+/* Input Field Styles */
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  outline: none;
+  border: 1px;
+  border-color: #E2E5E8;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid #d9dcef;
+  border-radius: 8px;
+}
+
+.form-field textarea {
+  line-height: 1em;
+  padding-top: 0.8em;
+  height: 97px;
+}
+
+.form-field input::placeholder,
+.form-field select::placeholder,
+.form-field textarea::placeholder {
+  color: #A0AEC0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* File Input Styles */
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+}
+
+.file-input::before {
+  content: 'select some file';
+  display: inline-block;
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+/* Password Input Styles */
+.password-type {
+  border: 1px solid #d9dcef;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  padding-right: 5px;
+}
+
+.password-type input {
+  width: 95%;
+  border: none;
+}
+
+.password-type input::placeholder {
+  color: #bab6b6;
+}
+
+.password-type .p_visible {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: center;
+  cursor: pointer;
+  font-size: 16px;
+}
