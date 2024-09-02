@@ -12,11 +12,14 @@ export function middleware(req: NextRequest) {
   }
 
   if (!accessToken) {
+    console.log(accessToken)
     return NextResponse.redirect(new URL('/sign-in', req.url));
   }
+  console.log(accessToken)
+
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/', '/course-monitoring']
+  matcher: ['/course-monitoring', '/recordings']
 }

@@ -19,7 +19,7 @@ const TopicCard = ({title, description, image, link}: TopicCardProps) => {
       <div className="">
         <Button 
           variant="outline" 
-          className="w-full border-black-1"
+          className="w-full border-black-1 h-[60px] text-[20px] font-normal text-black-1 hover:border-none hover:bg-[#E2E5E8]"
           asChild
         >
            <Link href={link}>Join tutorial</Link>

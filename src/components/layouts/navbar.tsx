@@ -31,29 +31,25 @@ const Navbar = () => {
           className='max-sm:size-10'
         />
       </Link>
-
-     
-        {
-          getCurrentUser ? (
-            <div>
-<Button className='' onClick={handleLogout}>
+      
+      {
+        getCurrentUser ? (
+          <div>
+            <Button className='outline text-black-1 hover:outline-none hover:bg-[#809ebc]' variant={"outline"}  onClick={handleLogout}>
               Log out
             </Button>
-            </div>
-            
-          ) : (
-            <div className="flex-between gap-5">
-            <Button className='outline' variant="outline" asChild>
-            <Link href="/sign-in">Sign in</Link>
-          </Button>
-          <Button className='' asChild>
-            <Link href="/sign-up">Sign up</Link>
-          </Button>
           </div>
-
-          )
-        }
-       
+        ) : (
+          <div className="flex-between gap-5">
+            <Button className='outline  hover:outline-none hover:bg-[#E2E5E8]' variant="outline" asChild>
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button className='' asChild>
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
+          </div>
+        )
+      }
     </nav>
   )
 }

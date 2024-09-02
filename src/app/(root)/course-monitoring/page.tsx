@@ -1,11 +1,9 @@
 'use client'
 
-import LocationCard from '@/components/home/location-card'
-import Recordings from '@/components/home/recordings'
-import { Button } from '@/components/ui/button'
-import { location, recordings } from '@/contants'
-import { AlarmClock, Calendar, Minus, MoveLeft, Play } from 'lucide-react'
 import Link from 'next/link'
+import LocationCard from '@/components/home/location-card'
+import { location } from '@/contants'
+import { AlarmClock, Calendar, Minus, MoveLeft } from 'lucide-react'
 
 const CourseMonitoring = () => {
   return (
@@ -16,11 +14,11 @@ const CourseMonitoring = () => {
       </Link>
 
       <div className='h-full w-full border border-[#E2E5E8] p-10 rounded-[16px]'>
-        <p className="text-[#A0AEC0] text-base font-medium">COURSE</p>
+        <p className="text-[#A0AEC0] text-base font-medium leading-none">COURSE</p>
         <h1 className='text-[50px] text-black-1 leading-[70px] font-medium tracking-[-4%]'>Front End Engineering</h1>
         <p className='text-lg text-normal text-[#767D84]'>Learn HTML, CSS, JavaScript.</p>
 
-        <div className='w-fit mt-8 flex items-center space-x-3 border-[0.5px] border-[#1164FA] rounded-[30px] px-[16px] py-[12px] bg-[rgb(238,247,255)]'>
+        <div className='w-fit mt-8 flex items-center space-x-3 border-[0.5px] border-[#1164FA] rounded-[30px] h-[48px] px-[20px] bg-[rgb(238,247,255)]'>
           <span className='text-[20px] text-base font-normal text-[#1164FA]'>Ongoing tutorial:</span>
           <div className="flex items-center ml-3">
             <div className="flex items-center  space-x-1">
