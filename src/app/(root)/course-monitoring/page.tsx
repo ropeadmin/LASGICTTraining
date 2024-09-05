@@ -7,7 +7,7 @@ import { AlarmClock, Calendar, Minus, MoveLeft } from 'lucide-react'
 
 const CourseMonitoring = () => {
   return (
-    <section className='pt-8'>
+    <section className='pt-28 md:pt-8'>
       <Link href={"/"} className='flex items-center space-x-2 mb-8'>
         <MoveLeft size={20} />
         <p className='text-black-1 font-normal text-[20px]'>back</p>
@@ -15,7 +15,7 @@ const CourseMonitoring = () => {
 
       <div className='h-full w-full border border-[#E2E5E8] p-10 rounded-[16px]'>
         <p className="text-[#A0AEC0] text-base font-medium leading-none">COURSE</p>
-        <h1 className='text-[50px] text-black-1 leading-[70px] font-medium tracking-[-4%]'>Front End Engineering</h1>
+        <h1 className='text-3xl md:text-[50px] pt-4 md:pt-0 text-black-1 md:leading-[70px] font-medium md:tracking-[-4%]'>Front End Engineering</h1>
         <p className='text-lg text-normal text-[#767D84]'>Learn HTML, CSS, JavaScript.</p>
 
         <div className='w-fit mt-8 flex items-center space-x-3 border-[0.5px] border-[#1164FA] rounded-[30px] h-[48px] px-[20px] bg-[rgb(238,247,255)]'>
@@ -36,7 +36,7 @@ const CourseMonitoring = () => {
 
       <div className=' w-full border border-[#E2E5E8] p-10 rounded-[16px] mt-8'>
         <p className="text-[#A0AEC0] text-base font-medium mb-5 leading-none">PHYSICAL LOCATION</p>
-        <div className="grid grid-cols-3 w-full flex-wrap gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full flex-wrap gap-8">
           {
             location.map((item, index) => (
               <LocationCard

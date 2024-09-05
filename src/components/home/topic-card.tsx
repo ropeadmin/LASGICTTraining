@@ -13,8 +13,8 @@ interface TopicCardProps {
 
 const TopicCard = ({title, description, image, link}: TopicCardProps) => {
   return (
-    <div className="w-[624px] border border-[#E2E5E8] rounded-[20px] p-10 ">
-      <h3 className="text-black-1 text-[20px] font-bold">{title}</h3>
+    <div className="w-full md:w-[624px] border border-[#E2E5E8] rounded-[20px] md:p-10 px-5 py-4 ">
+      <h3 className="text-black-1 text-[20px] font-bold ">{title}</h3>
       <p className="text-[#767D84] text-lg font-normal leading-8   mb-5">{description}</p>
       <div className="">
         <Button 
@@ -25,7 +25,7 @@ const TopicCard = ({title, description, image, link}: TopicCardProps) => {
            <Link href={link}>Join tutorial</Link>
         </Button>
       </div>
-      <div className="w-full h-[362px] relative mt-8">
+      <div className="w-full h-[300px] md:h-[362px] relative mt-8">
         <Image 
           src={image}
           alt= "frontend"

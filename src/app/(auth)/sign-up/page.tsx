@@ -50,7 +50,7 @@ const SignUp = () => {
 
   return (
     <div className='pt-8 relative h-[calc(100dvh-120px)]'>
-      <div className="w-[480px] h-[580px] mx-auto">
+      <div className=" md:w-[480px] w-full  h-[580px] mx-auto">
         <h2 className="text-2xl text-black-1 font-bold mt-10 mb-7">Sign up</h2>
         <FormProvider {...methods}>
           <form noValidate autoComplete='off' onSubmit={methods.handleSubmit(onSubmit)}>
@@ -122,7 +122,7 @@ const SignUp = () => {
       </div>
 
       {/*  */}
-      <div className='absolute bottom-10 flex items-center transform -translate-x-1/2 left-1/2 space-x-3 '>
+      <div className='w-full md:w-fit absolute bottom-10 justify-center flex items-center transform -translate-x-1/2 left-1/2 space-x-3 '>
         <p className="text-sm text-black-1 font-normal">Powered and sponsored by:</p>
         <Image
           src="/images/power_by.svg"

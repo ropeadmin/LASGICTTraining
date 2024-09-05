@@ -22,7 +22,7 @@ const LocationCard = ( { address, location, onClick }:  LocationCardProps) => {
             ${buttonVariants({ variant: "outline"})} 
             w-[182px] rounded-[50px] text-sm text-black-1 font-normal border  space-x-6 border-black-1 hover:border-none hover:bg-[#F2F3F5]
           `}
-          href={"/"}
+          href={"https://meet.google.com/ysx-gwiq-ivo"}
           target="_blank"
         >
           Join meeting link

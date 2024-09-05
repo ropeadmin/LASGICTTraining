@@ -13,7 +13,7 @@ const RecordingsPage = () => {
 
       <div className='h-full w-full border border-[#E2E5E8] p-10 rounded-[16px]'>
         <p className="text-[#A0AEC0] text-base font-medium">COURSE</p>
-        <h1 className='text-[50px] text-black-1 leading-[70px] font-medium tracking-[-4%]'>MACTAY HEADQUARTERS</h1>
+        <h1 className='text-3xl md:text-[50px] pt-4 md:pt-0 text-black-1 md:leading-[70px] font-medium md:tracking-[-4%]'>MACTAY HEADQUARTERS</h1>
         <p className='text-lg text-normal text-[#767D84]'>5, Prince Adelowo Adedeji St, Peninsula, Lekki Phase 1, Lagos.</p>
       </div>
 
