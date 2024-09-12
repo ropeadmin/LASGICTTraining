@@ -25,7 +25,7 @@ const Navbar = () => {
   console.log(pathname)
   return (
     <nav className='fixed h-[120px] flex-between z-50 w-full px-10 py-4 lg:px-[198px] bg-white  transform -translate-x-1/2 left-1/2 drop-shadow-sm'>
-      <Link href={"/"} className={cn('flex items-center gap-1', {
+      <Link href={"https://macjobsng.com/LASGICTTraining/"} className={cn('flex items-center gap-1', {
          'mx-auto' : pathname === '/sign-in' || pathname === '/sign-up'
       })}>
         <Image
