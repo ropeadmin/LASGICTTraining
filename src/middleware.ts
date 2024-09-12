@@ -8,7 +8,7 @@ export function middleware(req: NextRequest) {
   if (cookieValue) {
     const parsedCookie = JSON.parse(cookieValue);
     accessToken = parsedCookie.sessionToken;
-    
+    return NextResponse.next()
   }
 
   if (!accessToken) {
@@ -21,5 +21,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/course-monitoring', '/recordings']
+  matcher: ['/course-monitoring', '/recordings:path*']
 }
