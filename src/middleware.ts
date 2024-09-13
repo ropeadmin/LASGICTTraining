@@ -1,25 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
-  const cookie = req.cookies.get("authData")
+  const cookie = req.cookies.get("authData");
   const cookieValue = cookie?.value;
-  let accessToken = ''
+  let accessToken = '';
 
-  if (cookieValue) {
-    const parsedCookie = JSON.parse(cookieValue);
-    accessToken = parsedCookie.sessionToken;
-    return NextResponse.next()
-  }
+  console.log(cookie)
 
-  if (!accessToken) {
-    console.log(accessToken)
+  if (!cookieValue) {
+    console.log("No authData cookie found, redirecting to sign-in");
     return NextResponse.redirect(new URL('/sign-in', req.url));
   }
-  console.log(accessToken)
 
-  return NextResponse.next()
+  // try {
+  //   const parsedCookie = JSON.parse(cookieValue);
+  //   accessToken = parsedCookie;
+  //   // console.log(accessToken, "Valid session token");
+  // } catch (error) {
+  //   console.error("Failed to parse authData cookie:", error);
+  //   // return NextResponse.redirect(new URL('/sign-in', req.url));
+  // }
+
+  if (!cookieValue) {
+    console.log("No session token found, redirecting to sign-in");
+    return NextResponse.redirect(new URL('/sign-in', req.url));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/course-monitoring', '/recordings:path*']
-}
+  matcher: ['/course-monitoring', '/recordings:path*'],
+};
