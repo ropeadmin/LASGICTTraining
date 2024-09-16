@@ -7,10 +7,11 @@ import Link from "next/link";
 interface LocationCardProps {
   location: string;
   address: string;
+  id: number
   onClick: () => void;
 }
 
-const LocationCard = ( { address, location, onClick }:  LocationCardProps) => {
+const LocationCard = ( { address, location, id, onClick }:  LocationCardProps) => {
   return (
     <div className="border border-[#E2E5E8] w-[379px] px-6 py-6 rounded-[8px]">
       <div className="">
@@ -35,7 +36,7 @@ const LocationCard = ( { address, location, onClick }:  LocationCardProps) => {
           />
         </Link>
         <Button className="w-[129px] bg-[#EAEBEB] px-4  hover:border-none hover:bg-[#F2F3F5]" asChild>
-          <Link href="/recordings">View</Link>
+          <Link href={`/recordings/${id}`}>View</Link>
         </Button>
         </div>
        

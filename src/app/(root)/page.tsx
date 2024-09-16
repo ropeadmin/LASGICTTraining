@@ -1,6 +1,7 @@
 'use client'
 
 import TopicCard from "@/components/home/topic-card";
+import { courses } from "@/contants";
 
 export default function Home() {
   return (
@@ -9,19 +10,16 @@ export default function Home() {
         Learn and thrive in the digital world today by mastering tech skills that drive innovation.
       </h1>
       <div className="grid md:grid-cols-2 md:gap-x-8 gap-y-5 md:gap-y-0 mt-10 w-full md:w-fit mx-auto">
-        <TopicCard
-          title="FULL STACK ENGINEERING"
-          description="Learn frontend and backend web development."
-          image="/images/frontend.svg"
-          link={"/course-monitoring"}
-        />
-
-        <TopicCard
-          title="DATA ANALTYICS"
-          description="Learn data analytics."
-          image="/images/data.svg"
-          link={"/course-monitoring"}
-        />
+        {
+          courses.map(course => (
+            <TopicCard
+            title={course.name}
+            description={course.description}
+            image={course.image}
+            link={`/course-monitoring/${course.id}`}
+            />
+          ))
+        }
       </div>
     </main>
   );
