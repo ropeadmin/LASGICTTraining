@@ -12,16 +12,16 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/sign-in', req.url));
   }
 
-  // try {
-  //   const parsedCookie = JSON.parse(cookieValue);
-  //   accessToken = parsedCookie;
-  //   // console.log(accessToken, "Valid session token");
-  // } catch (error) {
-  //   console.error("Failed to parse authData cookie:", error);
-  //   // return NextResponse.redirect(new URL('/sign-in', req.url));
-  // }
+  try {
+    const parsedCookie = JSON.parse(cookieValue);
+    accessToken = parsedCookie;
+    // console.log(accessToken, "Valid session token");
+  } catch (error) {
+    console.error("Failed to parse authData cookie:", error);
+    return NextResponse.redirect(new URL('/sign-in', req.url));
+  }
 
-  if (!cookieValue) {
+  if (!accessToken) {
     console.log("No session token found, redirecting to sign-in");
     return NextResponse.redirect(new URL('/sign-in', req.url));
   }
@@ -30,5 +30,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/course-monitoring', '/recordings:path*'],
+  matcher: ['/course-monitoring/:path*', '/recordings/:path*'],
 };

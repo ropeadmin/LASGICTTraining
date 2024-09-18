@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
 import { Button } from '../ui/button'
 
 // ** Store
@@ -10,19 +11,32 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { getAuthSession } from '@/helpers';
 
 const Navbar = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const pathname = usePathname()
 
-  const getCurrentUser = useSelector((state: RootState) => state.auth.email)
   const dispatch = useDispatch()
   const router = useRouter()
+
+  // You can also monitor your Redux store if the session is stored there
+  const sessionToken = useSelector((state: RootState) => state.auth.authentication.sessionToken);
 
   const handleLogout = () => {
     dispatch(logout())
     router.push("/sign-in")
   }
-  console.log(pathname)
+  
+
+  useEffect(() => {
+    const sessionToken = getAuthSession();
+    setIsAuthenticated(!!sessionToken);
+  }, [sessionToken]); 
+
+  console.log(isAuthenticated)
+
   return (
     <nav className='fixed h-[120px] flex-between z-50 w-full px-10 py-4 lg:px-[198px] bg-white  transform -translate-x-1/2 left-1/2 drop-shadow-sm'>
       <Link href={"https://macjobsng.com/LASGICTTraining/"} className={cn('flex items-center gap-1', {
@@ -38,7 +52,7 @@ const Navbar = () => {
       </Link>
       {
         pathname === '/sign-in' || pathname === '/sign-up' ? null : (
-          getCurrentUser ? (
+        isAuthenticated ? (
             <div>
               <Button className='outline text-black-1 hover:outline-none hover:bg-[#809ebc]' variant={"outline"}  onClick={handleLogout}>
                 Log out
